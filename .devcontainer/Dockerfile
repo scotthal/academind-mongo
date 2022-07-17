@@ -20,6 +20,9 @@ RUN \
   curl -L https://downloads.mongodb.com/compass/mongodb-mongosh_1.5.0_amd64.deb > /tmp/mongosh.deb; \
   dpkg -i /tmp/mongosh.deb; \
   rm -f /tmp/mongosh.deb; \
+  curl -L https://fastdl.mongodb.org/tools/db/mongodb-database-tools-debian10-x86_64-100.5.3.deb > /tmp/mongotools.deb; \
+  dpkg -i /tmp/mongotools.deb; \
+  rm -f /tmp/mongotools.deb; \
   groupadd --gid $USER_GID $USERNAME; \
   useradd -s /bin/zsh --uid $USER_UID --gid $USER_GID -m $USERNAME; \
   echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME; \
